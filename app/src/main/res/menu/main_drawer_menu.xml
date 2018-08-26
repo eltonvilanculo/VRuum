@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/main_drawer_menu_my_trips"
+        android:title="Minhas Viagens" />
+    <item
+        android:id="@+id/main_drawer_menu_payment"
+        android:title="Pagamento" />
+    <item
+        android:id="@+id/main_drawer_menu_free_trips"
+        android:title="Viagens gratis" />
+
+    <item
+        android:id="@+id/main_drawer_menu_settings"
+        android:title="Definicoes" />
+    <item
+        android:id="@+id/main_drawer_menu_help"
+        android:title="Ajuda" />
+</menu>
+

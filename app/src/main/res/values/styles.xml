@@ -7,6 +7,9 @@
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
         <item name="colorAccent">@color/colorAccent</item>
 
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:windowFullscreen">true</item>
+
         <item name="colorError">@color/colorErrorInput</item>
         <item name="colorControlNormal">@color/colorNormalInput</item>
         <item name="colorControlActivated">@color/colorActivatedInput</item>

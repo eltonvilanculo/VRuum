@@ -3,6 +3,7 @@ package com.example.nameless.vruum;
 import android.app.Activity;
 import android.content.Intent;
 import android.support.annotation.NonNull;
+import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.widget.Toast;
 
@@ -14,6 +15,7 @@ import com.google.firebase.auth.FirebaseUser;
 
 import static android.support.constraint.Constraints.TAG;
 
+
 /**
  * Created by Nameless on 8/26/2018.
  */
@@ -23,10 +25,14 @@ public class FireAuth {
     private FirebaseAuth firebaseAuth;
     private Activity activity;
 
-    public FireAuth(Activity activity) {
+    public FireAuth(AppCompatActivity activity) {
         this.activity = activity;
         firebaseAuth = FirebaseAuth.getInstance();
         firebaseUser = firebaseAuth.getCurrentUser();
+
+
+
+
     }
 
     public Task<AuthResult> login(final String email, final String password) {
