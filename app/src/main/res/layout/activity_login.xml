@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/animation_list"
+    android:id="@+id/linearLayout"
+
+    tools:context="com.example.nameless.vruum.LoginActivity"
+    android:orientation="vertical">
+
+  <LinearLayout
+      android:layout_width="250dp"
+      android:layout_height="200dp"
+      android:layout_gravity="center"
+      >
+
+      <TextView
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:text="MM CONSUTORIA"
+          android:textSize="20sp"
+          android:layout_gravity="center"
+          android:textColor="@color/loginBackgrpund"
+         android:textStyle="bold|italic"
+          android:paddingLeft="40dp"
+          />
+
+  </LinearLayout>
+
+
+
+
+    <!--  Email Label -->
+    <android.support.design.widget.TextInputLayout
+        android:layout_width="300dp"
+        android:layout_gravity="center"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="8dp">
+        <EditText android:id="@+id/input_email"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="textEmailAddress"
+            android:hint="Introduza email"
+            android:background="@drawable/editshape"
+
+            />
+    </android.support.design.widget.TextInputLayout>
+
+    <!--  Password Label -->
+    <android.support.design.widget.TextInputLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="8dp">
+        <EditText android:id="@+id/input_password"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="textPassword"
+            android:hint="Password"/>
+    </android.support.design.widget.TextInputLayout>
+
+    <android.support.v7.widget.AppCompatButton
+        android:id="@+id/btn_login"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:layout_marginBottom="24dp"
+        android:padding="12dp"
+        android:text="Entrar"/>
+
+    <TextView android:id="@+id/link_signup"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="24dp"
+        android:text="Deseja cadastrar?"
+        android:gravity="center"
+        android:textSize="16dip"/>
+
+
+</LinearLayout>
