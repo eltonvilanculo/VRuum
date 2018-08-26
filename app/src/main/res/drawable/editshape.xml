@@ -1,19 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <shape xmlns:android="http://schemas.android.com/apk/res/android"
-    android:thickness="1dp" android:visible="true"
-    >
+    android:thickness="1dp"
+    android:visible="true">
 
 
-    <corners android:topRightRadius="15dp" android:radius="20dp" android:topLeftRadius="1dp">
-
-    </corners>
-
+    <corners android:radius="50dp" />
+    <solid  android:color="#7FC0C0C0" />
     <stroke
-        android:color="@color/colorPrimaryDark"
         android:width="1dp"
-        >
+        android:color="@color/full_white" />
 
-
-
-    </stroke>
 </shape>
