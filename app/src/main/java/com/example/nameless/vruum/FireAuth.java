@@ -1,6 +1,7 @@
 package com.example.nameless.vruum;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.support.annotation.NonNull;
 import android.util.Log;
 import android.widget.Toast;
@@ -28,16 +29,16 @@ public class FireAuth {
         firebaseUser = firebaseAuth.getCurrentUser();
     }
 
-    public Task<AuthResult> login(final String email, final String password){
-         return firebaseAuth.signInWithEmailAndPassword(email, password)
-                .addOnCompleteListener(activity,new OnCompleteListener<AuthResult>() {
+    public Task<AuthResult> login(final String email, final String password) {
+        return firebaseAuth.signInWithEmailAndPassword(email, password)
+                .addOnCompleteListener(activity, new OnCompleteListener<AuthResult>() {
                     @Override
                     public void onComplete(@NonNull Task<AuthResult> task) {
                         if (task.isSuccessful()) {
                             // Sign in success, update UI with the signed-in user's information
-                            Toast.makeText(activity, "", Toast.LENGTH_SHORT).show();
-                           firebaseUser = firebaseAuth.getCurrentUser();
-
+                            Toast.makeText(activity, " Successfull ", Toast.LENGTH_SHORT).show();
+                            firebaseUser = firebaseAuth.getCurrentUser();
+                            startActivity();
                         } else {
                             // If sign in fails, display a message to the user.
                             Log.w(TAG, "signInWithEmail:failure", task.getException());
@@ -52,8 +53,8 @@ public class FireAuth {
 
     }
 
-    public Task<AuthResult> signIn(final String email, final String password){
-       return firebaseAuth.createUserWithEmailAndPassword(email, password)
+    public Task<AuthResult> signIn(final String email, final String password) {
+        return firebaseAuth.createUserWithEmailAndPassword(email, password)
                 .addOnCompleteListener(activity, new OnCompleteListener<AuthResult>() {
                     @Override
                     public void onComplete(@NonNull Task<AuthResult> task) {
@@ -77,5 +78,16 @@ public class FireAuth {
 
     public FirebaseUser getFirebaseUser() {
         return firebaseUser;
+    }
+
+    void startActivity() {
+        Intent intent = new Intent(activity, MainActivity.class);
+        if (firebaseUser.isAnonymous()) {
+            activity.startActivity(intent);
+        } else {
+            intent.putExtra("FIRE_USERNAME", firebaseUser.getDisplayName());
+            intent.putExtra("FIRE_EMAIL", firebaseUser.getEmail());
+            activity.startActivity(intent);
+        }
     }
 }

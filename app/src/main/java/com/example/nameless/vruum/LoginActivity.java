@@ -1,6 +1,5 @@
 package com.example.nameless.vruum;
 
-import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.AppCompatEditText;
@@ -29,19 +28,11 @@ public class LoginActivity extends AppCompatActivity {
 
     }
 
-    void startActivity(){
-        Intent intent = new Intent(this,MainActivity.class);
-        if (fireAuth.getFirebaseUser().isAnonymous()){
-            startActivity(intent);
-        }
-        else {
-            intent.putExtra("FIRE_USERNAME",fireAuth.getFirebaseUser().getDisplayName());
-            intent.putExtra("FIRE_EMAIL",fireAuth.getFirebaseUser().getEmail());
-        }
-    }
+
 
     public void loginBasic(View view) {
-        startActivity();
+        fireAuth.login(inputEmail.getText().toString(),inputPass.getText().toString());
+
     }
 
     public void googleLogin(View view) {
